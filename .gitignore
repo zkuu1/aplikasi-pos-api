@@ -1,0 +1,5 @@
+# Contoh isi .gitignore
+node_modules/
+.env
+.DS_Store
+dist/
