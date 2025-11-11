@@ -1,10 +1,8 @@
-class responseError extends Error {
-    constructor(message, statusCode) {
-        super(message);
-        this.statusCode = statusCode;
-    }
+class ResponseError extends Error {
+  constructor(statusCode, message) {
+    super(message);
+    this.statusCode = statusCode;
+  }
 }
 
-module.exports = {
-    responseError
-}
+module.exports = ResponseError;

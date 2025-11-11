@@ -37,6 +37,8 @@ const registerUser = async (request) => {
       name: user.name,
       email: user.email,
       password: user.password,
+      address: user.address,
+      image: user.image
     },
   });
 };

@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -19,6 +19,7 @@ model User {
   email     String   @unique
   password  String @db.VarChar(100)
   address   String?
+  image     String @default("https://image.com")
   token String? @db.VarChar(100)
   role     String   @default("user") @db.VarChar(50)
   membership String @default("non_member") @db.VarChar(50)
@@ -44,7 +45,7 @@ model Product {
 
 model Absensi {
   id         Int      @id @default(autoincrement())
-  userId     Int
+  name       String   @db.VarChar(100)
   date       DateTime
   status     String   @db.VarChar(50)
   isMember   Boolean  @default(false)
